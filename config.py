@@ -3,7 +3,7 @@ import os
 ##Code Written By @ItsMeMaster
 
 class Config(object):
-    BOT_TOKEN = "8088050612:AAHmlNst28C7_AIuZZCI04qFAOgEBNTegiU"
+    BOT_TOKEN = ""
     DB_NAME = "takkishor9784"
     API_ID = "21157244"
     API_HASH = "4981c2699bd91c7db836ec8f77e5b0f0"
