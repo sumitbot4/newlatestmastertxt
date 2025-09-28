@@ -19,7 +19,7 @@ class Config(object):
     DB_NAME = os.getenv("DB_NAME", "tbogtt9784")
     API_ID = int(os.getenv("API_ID"))            # convert to int
     API_HASH = os.getenv("API_HASH")
-    ADMIN_ID = []
+    ADMIN_ID = 6007732467
     DB_URL = os.getenv("DB_URL", "mongodb+srv://takkishor9784:gG73juoh44MnvJEZ@cluster0.q8hxdk2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # fallback if not set
     LOG_CHANNEL = int(os.getenv("LOG_CHANNEL"))
     USERLINK = os.getenv("USERLINK", "https://t.me/bos56456ch12345o")
