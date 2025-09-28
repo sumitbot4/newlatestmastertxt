@@ -4,8 +4,27 @@ import asyncio
 from logger import LOGGER
 from modules.retasks import recover_incomplete_batches
 from modules.scheduler import start_daily_schedulers
-##Code Written By @ItsMeMaster
-##Code Written By @ItsMeMaster
+
+# --- Dummy web server for Render port binding ---
+import os
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is running!")
+
+def run_web():
+    port = int(os.getenv("PORT", 8080))  # Render provides PORT
+    server = HTTPServer(("0.0.0.0", port), Handler)
+    server.serve_forever()
+
+# Start the dummy web server in background
+threading.Thread(target=run_web, daemon=True).start()
+# -------------------------------------------------
+
 if __name__ == "__main__":
     bot = Client(
         "Bot",
